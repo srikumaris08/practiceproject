@@ -1,0 +1,116 @@
+<% layout("./layouts/boilerplate")%>
+<body>
+      <div class="row">
+        <div class="col-8 offset-2">
+            <h2 style="margin-left:0rem">Edit list</h2>
+            <br>
+           <form method="post" action="/listings/<%=getlist._id%>?_method=PUT" class="needs-validation" novalidate encType="multipart/form-data">
+             <div class="mb-3">
+              <label for="title" class="form-label">Title</label> <br>
+              <input name="listing[title]" value="<%=getlist.title%>" id="title" clas="form-control" required>
+               <br>
+                 <div class="valid-feedback">Title looks good!</div>
+             </div>
+             <div class="mb-3">
+                <label for="desc" class="form-label">Description</label>
+              <textarea name="listing[description]" id="desc" class="form-control"required ><%=getlist.description%></textarea>
+               <br>
+                 <div class="invalid-feedback">Please enter a short description</div>
+             </div>
+             <div class="mb-3">
+                <label for="price" class="form-label">Price</label>
+               <input name="listing[price]"  value="<%=getlist.price%>" id="price" class="form-control" required>
+              <br>
+              <div class="invalid-feedback">Price should be valid</div>
+            </div>
+             <div class="mb-3">
+               Original Image <br>
+               <img src="<%=originalurl%>" >
+             </div>
+            <div class="mb-3">
+                <label for="image" class="form-label">Upload New Image</label>
+                  <input type="file"
+                    name="listing[image]"
+                    id="image"
+                    class="form-control">
+             </div>
+
+            <div class="mb-3">
+    <label for="category" class="form-label">Category</label>
+
+    <select
+        name="listing[category]"
+        id="category"
+        class="form-select"
+        required
+    >
+        <option value="Trending"
+        <%= getlist.category==="Trending" ? "selected" : "" %>>
+        Trending
+        </option>
+
+        <option value="Rooms"
+        <%= getlist.category==="Rooms" ? "selected" : "" %>>
+        Rooms
+        </option>
+
+        <option value="Iconic Cities"
+        <%= getlist.category==="Iconic Cities" ? "selected" : "" %>>
+        Iconic Cities
+        </option>
+
+        <option value="Mountains"
+        <%= getlist.category==="Mountains" ? "selected" : "" %>>
+        Mountains
+        </option>
+
+        <option value="Castles"
+        <%= getlist.category==="Castles" ? "selected" : "" %>>
+        Castles
+        </option>
+
+        <option value="Amazing Pools"
+        <%= getlist.category==="Amazing Pools" ? "selected" : "" %>>
+        Amazing Pools
+        </option>
+
+        <option value="Camping"
+        <%= getlist.category==="Camping" ? "selected" : "" %>>
+        Camping
+        </option>
+
+        <option value="Farms"
+        <%= getlist.category==="Farms" ? "selected" : "" %>>
+        Farms
+        </option>
+
+        <option value="Arctic"
+        <%= getlist.category==="Arctic" ? "selected" : "" %>>
+        Arctic
+        </option>
+    </select>
+
+    <div class="invalid-feedback">
+        Please select a category
+    </div>
+</div>
+            <div class="mb-3">
+              <label for="loc" class="form-label">Location</label>
+              <input name="listing[location]"  value="<%=getlist.location%>"type="text" id="loc" class="form-control" required>
+             <br>
+              <div class="invalid-feedback">Location should be valid</div>
+            </div>
+            <div class="mb-3">
+             <label for="country" class="form-label">Country</label>
+             <input name="listing[country]" value="<%=getlist.country%>" type="text" id="country" class="form-control" required>
+             <br>
+             <div class="invalid-feedback">Country should be valid</div>
+            </div>
+            
+            <button class="btn btn-dark">Done</button>
+
+            </form>
+            <br><br>
+        </div>
+      </div>
+</body>

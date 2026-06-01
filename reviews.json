@@ -1,0 +1,28 @@
+[{
+  "_id": {
+    "$oid": "6a1552e73af50dae3faff786"
+  },
+  "comment": "good",
+  "rating": 4,
+  "createdAt": {
+    "$date": "2026-05-26T07:59:35.887Z"
+  },
+  "author": {
+    "$oid": "6a153590f0c35ef09c3d408b"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a187c3529fcbeb0b0895b53"
+  },
+  "comment": "goody goody",
+  "rating": 4,
+  "createdAt": {
+    "$date": "2026-05-28T17:32:37.472Z"
+  },
+  "author": {
+    "$oid": "6a13e7d98acc48434fd5b17c"
+  },
+  "__v": 0
+}]
