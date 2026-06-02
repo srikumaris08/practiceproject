@@ -63,12 +63,12 @@ app.use(session(sessionOptions));
 app.use(flash());
 app.get("/",(req,res)=>
 {
-    res.send("working");
+    res.redirect("/listings");
 })
 
 app.use(passport.initialize());
 app.use(passport.session());
-passport.use(new LocalStrategy(User.authenticate()));
+passport.use(new LocalStrategy(User.authenticate())); 
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
